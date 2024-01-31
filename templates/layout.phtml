@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Exercice Routeur MVC</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.php">Accueil</a>
+                </li>
+                <li>
+                    <a href="index.php?route=a-propos">À propos</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <?php
+    if ($route === 'espace_perso') {
+        require 'templates/espace_perso.phtml';
+    } else if ($route === 'error') {
+        require 'error.phtml';
+    } else if ($route === 'login') {
+        require 'templates/connexion.phtml';
+    } else if ($route === 'register') {
+        require 'templates/inscription.phtml';
+    }
+    var_dump($route);
+    ?>
+</body>
+
+</html>
